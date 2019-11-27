@@ -29,6 +29,8 @@
         ></vueCropper>
       </div>
       <div>
+        <button @click="changeScale(1)" class="btn">+</button>
+        <button @click="changeScale(-1)" class="btn">-</button>
         <button @click="rotateLeft" class="btn">rotateLeft</button>
         <button @click="rotateRight" class="btn">rotateRight</button>
       </div>
@@ -107,6 +109,10 @@ export default {
     },
     rotateRight() {
       this.$refs.cropper.rotateRight();
+    },
+    changeScale(num) {
+      num = num || 1;
+      this.$refs.cropper.changeScale(num);
     },
   },
   mounted() {
